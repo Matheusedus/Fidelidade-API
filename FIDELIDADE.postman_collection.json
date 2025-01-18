@@ -1,0 +1,422 @@
+{
+	"info": {
+		"_postman_id": "a73656d6-923a-4b6b-9ffe-84008e67cfd4",
+		"name": "FIDELIDADE",
+		"description": "Requests - Fidelidade",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41095313"
+	},
+	"item": [
+		{
+			"name": "Cadastrar Cliente",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Response has required fields\", function () {\r",
+							"    const responseData = pm.response.text();\r",
+							"\r",
+							"    pm.expect(responseData).to.include(\"<!DOCTYPE html>\");\r",
+							"    pm.expect(responseData).to.include(\"<head>\");\r",
+							"    pm.expect(responseData).to.include(\"<title>Not Found</title>\");\r",
+							"    pm.expect(responseData).to.include(\"<style>\");\r",
+							"    pm.expect(responseData).to.include(\"<body class=\\\"antialiased\\\">\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Teste\",\r\n    \"email\": \"teste@teste.com\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/clientes",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Cliente Por Identificador",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Response has required fields\", function () {\r",
+							"    const responseData = pm.response.text();\r",
+							"\r",
+							"    pm.expect(responseData).to.include(\"<!DOCTYPE html>\");\r",
+							"    pm.expect(responseData).to.include(\"<head>\");\r",
+							"    pm.expect(responseData).to.include(\"<title>Not Found</title>\");\r",
+							"    pm.expect(responseData).to.include(\"<style>\");\r",
+							"    pm.expect(responseData).to.include(\"<body class=\\\"antialiased\\\">\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"valor_gasto\": 20\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/clientes/matheuslega@hotmail.com.br",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"clientes",
+						"matheuslega@hotmail.com.br"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Cliente e Saldo",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Response has required fields\", function () {\r",
+							"    const responseData = pm.response.text();\r",
+							"\r",
+							"    pm.expect(responseData).to.include(\"<!DOCTYPE html>\");\r",
+							"    pm.expect(responseData).to.include(\"<head>\");\r",
+							"    pm.expect(responseData).to.include(\"<title>Not Found</title>\");\r",
+							"    pm.expect(responseData).to.include(\"<style>\");\r",
+							"    pm.expect(responseData).to.include(\"<body class=\\\"antialiased\\\">\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"valor_gasto\": 20\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/clientes/matheuslega@hotmail.com.br",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"clientes",
+						"matheuslega@hotmail.com.br"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Todos os Clientes",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Response has required fields\", function () {\r",
+							"    const responseData = pm.response.text();\r",
+							"\r",
+							"    pm.expect(responseData).to.include(\"<!DOCTYPE html>\");\r",
+							"    pm.expect(responseData).to.include(\"<head>\");\r",
+							"    pm.expect(responseData).to.include(\"<title>Not Found</title>\");\r",
+							"    pm.expect(responseData).to.include(\"<style>\");\r",
+							"    pm.expect(responseData).to.include(\"<body class=\\\"antialiased\\\">\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/clientes",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Resgatar Prêmio",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Response has required fields\", function () {\r",
+							"    const responseData = pm.response.text();\r",
+							"\r",
+							"    pm.expect(responseData).to.include(\"<!DOCTYPE html>\");\r",
+							"    pm.expect(responseData).to.include(\"<head>\");\r",
+							"    pm.expect(responseData).to.include(\"<title>Not Found</title>\");\r",
+							"    pm.expect(responseData).to.include(\"<style>\");\r",
+							"    pm.expect(responseData).to.include(\"<body class=\\\"antialiased\\\">\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"brinde_id\": 1\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/clientes/4/resgatar",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"clientes",
+						"4",
+						"resgatar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pontuar Cliente",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Response has required fields\", function () {\r",
+							"    const responseData = pm.response.text();\r",
+							"\r",
+							"    pm.expect(responseData).to.include(\"<!DOCTYPE html>\");\r",
+							"    pm.expect(responseData).to.include(\"<head>\");\r",
+							"    pm.expect(responseData).to.include(\"<title>Not Found</title>\");\r",
+							"    pm.expect(responseData).to.include(\"<style>\");\r",
+							"    pm.expect(responseData).to.include(\"<body class=\\\"antialiased\\\">\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"valor_gasto\": 13.00\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/clientes/4/pontuar",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"clientes",
+						"4",
+						"pontuar"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
