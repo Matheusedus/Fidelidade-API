@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('cliente_id');
             $table->foreign('cliente_id')->references('id')->on('clientes')->onDelete('cascade');
-            $table->integer('valor_gasto');
+            $table->decimal('valor_gasto', 8, 2);
             $table->integer('pontos_ganhos');
             $table->timestamps();
         });
